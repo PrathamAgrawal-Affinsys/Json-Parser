@@ -1,0 +1,39 @@
+{
+  "title": "Person Schema",
+  "description": "Description",
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "description": "The first name of the person"
+    },
+    "lastName": {
+      "type": "string",
+      "description": "The last name of the person"
+    },
+    "age": {
+      "type": "integer",
+      "description": "The age of the person"
+    },
+    "email": {
+      "type": "string",
+      "description": "The email address of the person"
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "street": {
+          "type": "string",
+          "description": "The street address"
+        },
+        "city": {
+          "type": "string",
+          "description": "The city"
+        }
+      },
+      "required": ["street", "city"],
+      "description": "The address of the person"
+    }
+  },
+  "required": ["firstName", "lastName", "age", "email", "address"]
+}
