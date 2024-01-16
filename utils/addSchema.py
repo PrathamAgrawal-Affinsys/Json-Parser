@@ -2,10 +2,13 @@
 
 import json
 import os
+from utils.validateSchema import validateSchema
+
 def readJson(inFile):
     try:
         with open (inFile,'r') as f:
             data=json.load(f)
+            validateSchema(data) #this is for validating the schema file. Code to be added soon. 
         return data
         
     except:
