@@ -1,7 +1,7 @@
 from utils.createDocs import create
 from utils.addSchema import saveSchema
 
-
+import json
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -20,4 +20,7 @@ if(args.addSchema!=None):
     saveSchema(args.addSchema)
 
 if(args.createDocs!=None):
-    create(args.createDocs[0],args.createDocs[1])
+    with open('./Saved/schema.json', 'r') as f:
+        schema=json.load(f)
+
+    create(args.createDocs[0],args.createDocs[1],schema)

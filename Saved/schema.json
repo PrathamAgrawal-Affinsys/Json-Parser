@@ -26,14 +26,8 @@
     "address": {
       "type": "object",
       "properties": {
-        "street": {
-          "type": "string",
-          "description": "The street address"
-        },
-        "city": {
-          "type": "string",
-          "description": "The city"
-        }
+        "street": { "type": "string", "description": "The street address" },
+        "city": { "type": "string", "description": "The city" }
       },
       "description": "The address of the person",
       "required": false

@@ -17,7 +17,7 @@ def saveSchema(inFile):
         if not os.path.exists('Saved'):
             os.makedirs('Saved')
 
-        with open(f"Saved/updated.json","w") as f:
+        with open(f"Saved/schema.json","w") as f:
             json.dump(data, f) 
     except:
         print("Error saving schema file.")
