@@ -1,5 +1,4 @@
-def validateSchema(schema):
-    pass
+
 
 
 

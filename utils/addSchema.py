@@ -2,21 +2,19 @@
 
 import json
 import os
-from utils.validateSchema import validateSchema
 
-def readJson(inFile):
-    try:
-        with open (inFile,'r') as f:
-            data=json.load(f)
-            validateSchema(data) #this is for validating the schema file. Code to be added soon. 
-        return data
-        
-    except:
-        print("Error reading json file. Check for the existence of the file.")
+def readValidateJson(inFile):
+    with open(inFile) as file:    
+        try:
+            return json.load(file) 
+        except json.decoder.JSONDecodeError:
+            print("Invalid JSON to be added as schema!") 
+            return {}
+
 
 def saveSchema(inFile):
     try:
-        data=readJson(inFile)
+        data=readValidateJson(inFile)
         if not os.path.exists('Saved'):
             os.makedirs('Saved')
 
