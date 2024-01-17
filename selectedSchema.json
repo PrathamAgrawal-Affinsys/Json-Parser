@@ -22,7 +22,7 @@
       "type": "string",
       "description": "The email address of the person",
       "required": true
-    },
+},
     "address": {
       "type": "object",
       "properties": {

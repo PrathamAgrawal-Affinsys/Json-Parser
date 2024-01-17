@@ -38,7 +38,14 @@ if(__name__=="__main__"):
                 try:
                     with open(args.updateSchema, 'r') as f:
                         updateSchema=json.load(f)
-                    update(updateSchema,schema)
+                    updateSchema=update(updateSchema,schema)
+
+                    try:
+                        with open(f"Saved/schema.json","w") as f:
+                                json.dump(updateSchema, f)
+                        print("Schema updated successfully.")
+                    except:
+                        print("Not able to write the schema file for updation.")
                 except:
                     print(f"Not able to open the {args.updateSchema}!")
         except:
