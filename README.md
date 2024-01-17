@@ -31,6 +31,54 @@ This tool can be used to add, update schema files. Validating an user input file
 
 <hr>
 
+<h3>Examples of structure for json files:</h3>
+
+1. Sample Json Schema structure:
+   
+```
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Example Schema",
+  "description": "An example JSON schema",
+  "type": "object",
+  "properties": {
+    "property1": {
+      "type": "string",
+      "description": "Description of property1"
+    },
+    "property2": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Description of property2"
+    },
+    "property3": {
+      "type": "boolean",
+      "description": "Description of property3"
+    }
+    // Add more properties as needed
+  },
+  "required": ["property1", "property2"],
+  "additionalProperties": false
+}
+```
+2. Sample structure for updation
+
+```
+{
+  "add": {
+    "properties": {
+      "newProperty": {"type": "string"}
+    }
+  },
+  "remove": ["oldProperty"],
+  "update": {
+    "properties": {
+      "existingProperty": {"description": "Updated description"}
+    }
+  }
+}
+```
+
 <h3>Usage of the tool:</h3>
 
 1. Adding a schema 
