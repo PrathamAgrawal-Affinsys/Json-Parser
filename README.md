@@ -83,12 +83,12 @@ This tool can be used to add, update schema files. Validating an user input file
 
 1. Adding a schema 
 ```
-python main.py --addSchema selectedSchema.json
+python main.py --addSchema Schema.json
 ```
 
 2. Validating a user input and creating a documentation file for the same
 ```
-python main.py --createDocs test.json,output.md
+python main.py --createDocs userInput.json
 ```  
 This will create a ```output.md``` if the user file matches the schema description
 
